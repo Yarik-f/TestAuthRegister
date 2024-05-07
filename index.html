@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/test.css">
+    <title>Регистрация и вход</title>
+</head>
+<body>
+<div id="registrationFormDiv" action="register.php" method="POST">
+    <h2>Регистрация</h2>
+    <form id="registrationForm">
+        <input type="text" id="registerLogin" placeholder="Логин">
+        <span id="registerLoginError"></span><br>
+        <input type="password" id="registerPassword" placeholder="Пароль">
+        <span id="registerPasswordError"></span><br>
+        <input type="password" id="registerConfirmPassword" placeholder="Подтвердите пароль">
+        <span id="registerConfirmPasswordError"></span><br>
+        <input type="email" id="registerEmail" placeholder="Email">
+        <span id="registerEmailError"></span><br>
+        <input type="text" id="registerName" placeholder="Имя">
+        <span id="registerNameError"></span><br>
+        <button type="submit">Зарегистрироваться</button>
+    </form>
+    <p id="registrationMessage"></p>
+    <button onclick="showLoginForm()">Войти</button>
+</div>
+
+<div id="loginFormDiv" action="login.php" method="POST" style="display: none;">
+    <h2>Вход</h2>
+    <form id="loginForm">
+        <input type="text" id="loginLogin" name="login" placeholder="Логин"><br>
+        <input type="password" id="loginPassword" name="password" placeholder="Пароль"><br>
+        <span id="loginError"></span><br>
+        <button type="submit">Войти</button>
+    </form>
+
+    <p id="welcomeMessage"></p>
+    <button onclick="showRegistrationForm()">Зарегистрироваться</button>
+</div>
+
+<div id="userInfo" style="display: none;">
+    <h2>Привет, <span id="loggedInUsername"></span></h2>
+    <button onclick="logout()">Выйти</button>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
